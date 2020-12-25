@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#fff"
+
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="46dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="17.5dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/tk" />
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="46dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@id/cv_img">
+
+                    <EditText
+                        android:id="@+id/search"
+                        android:drawablePadding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bgr"
+                        android:cursorVisible="false"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawableEnd="@drawable/ic_voice"
+                        android:hint="Bài hat play và nghệ sĩ..."
+                        android:textColor="#000"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout1">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="11dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/header_binz"/>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_below="@id/layout2"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhạc Mới"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_nhacmoi"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thể Loại"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_theloai"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Top 100"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/sign"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MV"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/mv"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VIP"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_vip"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_banmuonnghe"
+                android:layout_below="@id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Có thể bạn muốn nghe"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_muonnghe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_banmuonnghe"
+                android:background="#fff"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tv_playlist"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/rcv_muonnghe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Playlist gần đây"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_playlist"
+                android:background="#fff"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tv_radio"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/rcv_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Radio"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_radio"
+                android:background="#fff"
+                android:layout_marginTop="5dp"/>
+            <ImageView
+                android:id="@+id/img_zingchart"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_below="@id/rcv_radio"
+                android:src="@drawable/zingchat"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_zingchart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/img_zingchart"
+                android:background="#fff"/>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
